@@ -5,6 +5,8 @@
 
 		$urlRouterProvider.otherwise('/');
 
+		
+
 		$stateProvider
 		.state('publico', {
 			abstract: true,
