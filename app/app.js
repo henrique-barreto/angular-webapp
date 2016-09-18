@@ -1,10 +1,18 @@
 (function() {
 
-	angular.module('app', ['ui.router', 'app.professor', 'app.authentication'])
-	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
+
+
+	angular.module('app', [
+		'ui.router', 
+		'LocalStorageModule',
+		'app.professor', 
+		'app.authentication'])
+	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
+
+		$locationProvider.html5Mode(true);
+		
 		$urlRouterProvider.otherwise('/');
-
 		
 
 		$stateProvider
@@ -22,7 +30,12 @@
 		});
 
 
-	}]);
+
+	}])
+	.config(function (localStorageServiceProvider) {
+		localStorageServiceProvider
+		.setPrefix('app');
+	});
 
 
 })();

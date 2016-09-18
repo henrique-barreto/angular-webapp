@@ -12,40 +12,12 @@
 		</form>
 	</div>
 
-	<div class="card card-padding card-alert-danger">
-		A busca por <label>henrique</label> retornou xxx alunos.
+	<div ng-show="buscaCtrl.mostrarInfo" class="card card-padding card-alert-danger">
+		A busca por <label>{{buscaCtrl.nome}}</label> retornou {{buscaCtrl.alunos.length}} alunos.
 	</div>
+
+
+	<aluno-resultado ng-repeat="aluno in buscaCtrl.alunos"></aluno-resultado>
 
 </div>
 
-<!-- aluno card -->
-<!-- <div class="card card-padding">
-	<h3>Henrique Eduardo Alves <small>19 anos - henriquegb@gmail.com</small></h3>
-	<div class="busca-alunos">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="alert alert-info">
-					<h4>Avaliação Física</h4>
-					<button type="button" class="btn btn-info btn-block">Nova avaliação física</button>
-					<br/>
-					<div class="btn-group btn-group-justified" role="group" aria-label="...">
-						<a type="button" class="btn btn-info">Histórico</a>
-						<a type="button" class="btn btn-info">Estatísticas</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="alert alert-danger">
-					<h4>Treino</h4>
-					<button type="button" class="btn btn-danger btn-block">Novo treino</button>
-					<br/>
-					<div class="btn-group btn-group-justified" role="group" aria-label="...">
-						<a type="button" class="btn btn-danger">Histórico</a>
-						<a type="button" class="btn btn-danger">Treino atual</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- fim aluno card -->

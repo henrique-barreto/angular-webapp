@@ -1,57 +1,88 @@
 (function() {
 
 	angular.module('app.authentication', ['ngCookies'])
-	.service('AuthService', function($http, $cookies, $location, $rootScope, $state){
+	.factory('AuthService', function($http, $cookies, $location, $rootScope, $state, localStorageService){
 
-
-		var authService = this;
 		var loginUrl = 'http://localhost:8080/treinoapp/login';
+		var authUsuarioUrl = 'http://localhost:8080/treinoapp/api/v1/auth/usuario';
 
-		this.login = function (username, password) {
-
-			var data = 'username=' + username + '&password=' + password;
-
-			$http({
-				url: loginUrl,
-				method: "POST",
-				data: data,
-				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-			}).success(function (data, status, headers, config) {
-				alert('ok: ' + status);
-				console.log(headers);
-
-				authService.setCredentials(username, password);
-
-				// $location.path('/aluno/home');
-				$state.transitionTo('professor.home', {});
-			}).error(function (data, status, headers, config) {
-				alert('error: ' + status);
-			});
-
-		};
-
-		this.setCredentials =  function(username, password) {
-
-			console.log('colocando credentias');
+		var setCredentials = function(username, password) {
+			console.log('colocando credentials');
 			var authdata = btoa(username + ':' + password);
-
 			$rootScope.globals = {
 				currentUser: {
 					username: username,
 					authdata: authdata
 				}
 			};
-
-			console.log($rootScope.globals);
 			$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 			$cookies.put('globals', $rootScope.globals);
-		};
+		}
 
-		this.clearCredentials = function() {
+		var setLoggedInUser = function() {
+			$http({
+				url: authUsuarioUrl,
+				method: "GET",
+			}).success(function (data) {
+				localStorageService.set('loggedUser', data);
+				usuarioLogado = true;
+			}).error(function (data, status, headers, config) {
+				console.log('Erro ao buscar usuario logado!');
+			});
+		}
+
+		var clearCredentials = function() {
 			$rootScope.globals = {};
-			$cookieStore.remove('globals');
+			$cookies.remove('globals');
 			$http.defaults.headers.common.Authorization = 'Basic';
 		}
+
+		var removeLoggedInUser = function() {
+			localStorageService.remove('loggedUser');
+		}
+
+
+		return {
+
+			login: function (username, password) {
+
+				var data = 'username=' + username + '&password=' + password;
+				$http({
+					url: loginUrl,
+					method: "POST",
+					data: data,
+					headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+				}).success(function (data, status, headers, config) {
+					console.log(headers);
+					setCredentials(username, password);
+					setLoggedInUser();
+					$state.transitionTo('professor.home', {});
+				}).error(function (data, status, headers, config) {
+					alert('error: ' + status);
+				});
+
+			},
+
+			logout: function() {
+				console.log('fazendo logout...');
+				clearCredentials();
+				removeLoggedInUser();
+				$state.transitionTo('publico.login', {});
+			},
+
+			isLoggedIn: function() {
+				if (localStorageService.get('loggedUser')) {
+					return true;
+				}
+				return false;
+			},
+
+			getCurrentUser: function() {
+				return localStorageService.get('loggedUser');
+			}
+
+		};
+
 
 
 	});

@@ -1,0 +1,79 @@
+<div class="card card-padding">
+	<div class="page-header">
+		<h1>1. Anamnese <small>Informações do aluno</small></h1>
+	</div>
+
+
+	<div class="avaliacao-form">
+		
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Nome</label>
+				<div class="col-sm-10">
+					<p class="form-control-static">Henrique Gonçalves Barreto</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Idade</label>
+				<div class="col-sm-10">
+					<p class="form-control-static">23 anos</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Sexo</label>
+				<div class="col-sm-10">
+					<p class="form-control-static">Masculino</p>
+				</div>
+			</div>
+			<hr/>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Peso (kg)</label>
+				<div class="col-sm-10">
+					<input ng-model="avaliacaoCtrl.anamnese.peso" type="text" class="form-control" placeholder="56kg">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Estatura (cm)</label>
+				<div class="col-sm-10">
+					<input ng-model="avaliacaoCtrl.anamnese.estatura" type="text" class="form-control" id="inputPassword" placeholder="182cm">
+				</div>
+			</div>
+			
+			<hr/>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Objetivo</label>
+				<div class="col-sm-10">
+					<select ng-model="avaliacaoCtrl.anamnese.objetivo" class="form-control">
+						<option>Perder peso</option>
+						<option>Ganho de massa</option>
+						<option>Manter peso</option>
+						<option>Perder gordura</option>
+					</select>
+				</div>
+			</div>	
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Meta peso (kg)</label>
+				<div class="col-sm-10">
+					<input ng-model="avaliacaoCtrl.anamnese.metaPeso" type="text" class="form-control" placeholder="56kg">
+				</div>
+			</div>			
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Meta BF %</label>
+				<div class="col-sm-10">
+					<input ng-model="avaliacaoCtrl.anamnese.metaBF" type="text" class="form-control" placeholder="20%">
+				</div>
+			</div>
+
+
+			<a ui-sref="professor.novaAvaliacao.perimetria" class="btn btn-success pull-right">Próximo</a>
+
+			<div class="clearfix"></div>
+		</form>
+
+
+	</div>
+
+
+</div>

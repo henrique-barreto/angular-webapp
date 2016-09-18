@@ -12,8 +12,8 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="professor.home"><span class="glyphicon glyphicon-user"></span> Henrique Gonçalves Barreto</a></li>
-        <li><a ui-sref="publico.login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <li><a ui-sref="professor.home"><span class="glyphicon glyphicon-user"></span> {{usuario.nome}}</a></li>
+        <li><a ng-click="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>
