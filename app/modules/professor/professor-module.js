@@ -34,8 +34,8 @@
 			templateUrl : "app/modules/professor/nova-avaliacao/dobras.html"
 		})
 		.state('professor.novaAvaliacao.resultado', {
-			url: '/professor/nova-avaliacao/anamnese',
-			templateUrl : "app/modules/professor/nova-avaliacao/anamnese.html"
+			url: '/professor/nova-avaliacao/resultado',
+			templateUrl : "app/modules/professor/nova-avaliacao/resultado.html"
 		})
 		;
 
