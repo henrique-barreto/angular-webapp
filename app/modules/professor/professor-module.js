@@ -7,6 +7,11 @@
 		.state('professor', {
 			abstract: true,
 			templateUrl: '/app/shared/view-template/seguro.html'
+			// ,
+			// onEnter: function(){
+			// 	alert('hfghfghfghello');	
+			// }
+			
 		})
 		.state('professor.home', {
 			url: '/professor',

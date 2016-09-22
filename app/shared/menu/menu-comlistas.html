@@ -1,0 +1,28 @@
+<!-- slide-out -->
+<div id="menu-lateral">
+	<!-- nav-menu-lateral -->
+	<nav id="nav-menu-lateral">
+		<ul class="first-level" ng-repeat="menu in menuCtrl.menus">
+
+			<!-- <menu-item nome="{{menu.nome}}" items="menu.items"></menu-item> -->
+
+			<!-- menu-item -->
+			<li>
+				<a title="{{menu.nome}}" data-toggle="collapse-next" class="accordion-toggle collapsed">
+					{{menu.nome}}
+				</a>
+				<!-- sub-item-ul -->
+				<ul class="collapse in" ng-repeat="item in menu.items">
+					<li><a ng-click="menuCtrl.click()" ui-sref="{{item.state}}" class="menu-link">{{item.nome}}</a></li>
+				</ul>
+				<!-- ./ sub-item-ul -->
+			</li>
+			<!-- ./ menu-item -->
+
+
+		</ul>
+		<!-- /. ul -->
+	</nav>
+	<!-- ./ nav -->
+</div>
+<!-- ./ menu-lateral -->

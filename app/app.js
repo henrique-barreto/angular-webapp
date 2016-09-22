@@ -32,10 +32,30 @@
 
 
 	}])
+	
+
 	.config(function (localStorageServiceProvider) {
 		localStorageServiceProvider
 		.setPrefix('app');
-	});
+	})
+
+
+	.run(
+		function($rootScope, $transitions, $state, AuthService ) {
+
+			$transitions.onBefore( { to: '**' , from: '**' }, function($state$) {
+				var state = $state$._targetState._identifier;
+				if (!state) {
+					state = state.name;
+				}
+				var canAcess = AuthService.canAcess(state + '');
+				if (!canAcess) {
+					console.log($state);
+					$state.transitionTo('publico.login', {});
+				}
+			});
+
+		});
 
 
 })();

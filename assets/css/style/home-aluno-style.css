@@ -28,110 +28,175 @@ body {
 }
 
 
-/*======================================================================== MENU LEFT =============================================================*/
-
-.accordion-group {
-	margin-bottom: 4px;
-}
-
-.accordion-heading {
-	/*background-color: pink;*/
-}
-
-
-#accordion {
-	margin-bottom: 20px;
-}
-.accordion-heading .accordion-toggle {
-    display: block;
-    padding: 10px 15px;
-    line-height: 20px;
-}
-
-a.accordion-toggle {
-    letter-spacing: .05em;
-    font-size: 13px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    cursor: pointer;
-    background-color: #dd4b39;
-}
-
-.accordion-heading a {
-    color: #FFF;
-    text-decoration: none;
-}
-
-
-
-
-/*heading collapsed*/
-a.accordion-toggle.collapsed, .accordion-button > a.expanded {
-    /*color: #505459;*/
-    color: #FFF;
-    background-color: rgb(66, 133, 244);
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-    -webkit-border-radius: 2px 2px 0 0;
-    -moz-border-radius: 2px 2px 0 0;
-    /* border-radius: 2px 2px 0 0; */
-}
-
-
-.accordion-body {
-    font-size: 11px;
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-    -webkit-border-radius: 0 0 2px 2px;
-    -moz-border-radius: 0 0 2px 2px;
-    border-radius: 0 0 2px 2px;
-}
-
-
-.accordion-toggle-link {
-	display: block;
-    padding: 10px 15px;
-    line-height: 20px;
-}
-
-a.accordion-toggle-link {
-    letter-spacing: .05em;
-    font-size: 13px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    cursor: pointer;
-    color: #505459;
-    background-color: #FFF;
-
-        border-bottom: 1px solid #E4E4E4;
-}
-
-
-.accordion-inner a {
-    text-decoration: none;
-}
-
-.accordion-inner a:hover {
-	text-decoration: underline;
-}
-
-.accordion-inner a:active {
-    background: #03AEE4;
-    color: rgba(255,255,255,0.85);
-}
-
-
-.accordion-heading .accordion-toggle:after {
-    font-family: 'Glyphicons Halflings';  
-    content: "\e114";    
-    float: right;       
-    color: #FFF;
-}
-.accordion-heading .accordion-toggle.collapsed:after {
-    content: "\e080";
-    color: #FFF;
-}
+    /*==========================================================*/
+    /*======================= Menu Lateral =====================*/
+    /*==========================================================*/
+    .side-nav {
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      position: fixed;
+      width: 280px;
+      left: 0;
+      margin: 0;
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+      height: 100%;
+      height: -moz-calc(100%);
+      background-color: #FFF;
+      border-right: 1px solid #e8e8e8;
+      z-index: 999;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      overflow-y: auto;
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateX(-105%);
+      transform: translateX(-105%);
+      padding-left: 0;
+    }
+    .side-nav.fixed {
+      left: 0;
+      position: fixed;
+    }
+    .side-nav.fixed.right-aligned {
+      right: 0;
+      left: auto;
+    }
+    .side-nav.enabled {
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+    }
+    .side-nav.disabled {
+      -webkit-transform: translateX(-105%);
+      transform: translateX(-105%);
+    }
+    @media (min-width:993px) {
+      /*mostra menu*/
+      .side-nav {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+      }
+      .side-nav.disabled {
+        -webkit-transform: translateX(-105%);
+        transform: translateX(-105%);
+      }
+    }
+    .side-nav .collapsible {
+      margin: 0;
+    }
+    #menu-lateral {
+      height: 100%;
+      background-color: #fff;
+    }
+    #menu-lateral li {
+      float: none;
+      line-height: 40px;
+    }
+    #menu-lateral li.active {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    #menu-lateral  a {
+      color: rgba(0, 0, 0, 0.87);
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      height: 34px;
+      line-height: 34px;
+      padding: 0 34px;
+    }
+    #menu-lateral a {
+      display: block;
+      padding: 0 16px;
+    }
+    #sidenav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 120vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 997;
+      will-change: opacity;
+    }
+    .body-overlay {
+      display: none;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0.5;
+      filter: alpha(opacity = 50); /* IE7 & 8 */
+      position: fixed;
+      right: 0;
+      top: 0;
+      padding-left: 280px;
+      width: 100%;
+      height: 100%;
+      z-index: 500;
+    }
+    /*================== menu lateral ==================*/
+    #menu-lateral figure {
+      background-color: #FEAA15;
+      padding: 5px;
+    }
+    #menu-lateral figure img {
+      margin-left: 10px;
+    }
+    #nav-menu-lateral ul li .accordion-toggle {
+      font-weight: bold;
+    }
+    #nav-menu-lateral ul li .accordion-toggle.collapsed {
+      background-color: #eee;
+      border-left: 4px solid #FEAA15;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+    }
+    #nav-menu-lateral ul li .accordion-toggle:after {
+      font-family: 'Glyphicons Halflings';
+      content: "\e080";
+      float: right;
+      color: #333;
+    }
+    #nav-menu-lateral ul li .accordion-toggle.collapsed:after {
+      content: "\e114";
+      color: #333;
+    }
+    #menu-lateral ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    #nav-menu-lateral ul li a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    #nav-menu-lateral ul li a:hover {
+      background-color: #f5f5f5;
+    }
+    #nav-menu-lateral ul li a:active {
+      background-color: #eee;
+      border-left: 4px solid #FEAA15;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+    }
+    /*=============== links style ================*/
+    /*primeiro nivel*/
+    #nav-menu-lateral > ul > li > a {
+      border-top: 1px solid #ccc;
+      background-color: #fff;
+    }
+    #nav-menu-lateral > ul > li:last-child {
+      border-bottom: 1px solid #ccc;
+    }
+    /*segungo nivel*/
+    #nav-menu-lateral > ul > li > ul > li a {
+      padding-left: 30px;
+      background-color: #fff;
+      font-size: 0.9em;
+    }
+    /*==========================================================*/
+    /*====================== Fim Menu Lateral ==================*/
+    /*==========================================================*/
 
 /*======================================================================== FIM MENU LEFT =============================================================*/
 @media screen and (min-width:991px)  {

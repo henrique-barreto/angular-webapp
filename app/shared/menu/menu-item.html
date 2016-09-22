@@ -1,0 +1,12 @@
+<!-- menu-item -->
+<li>
+	<a title="Treino" data-toggle="collapse-next" class="accordion-toggle collapsed">
+		{{nome}}
+	</a>
+	<!-- sub-item-ul -->
+	<ul class="collapse in" ng-repeat="item in items">
+		<li><a ng-click="menuCtrl.click()" ui-sref="{{item.state}}" class="menu-link">{{item.nome}}</a></li>
+	</ul>
+	<!-- ./ sub-item-ul -->
+</li>
+<!-- ./ menu-item -->

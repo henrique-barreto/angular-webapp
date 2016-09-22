@@ -17,34 +17,66 @@
 			};
 			$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 			$cookies.put('globals', $rootScope.globals);
-		}
+		};
 
-		var setLoggedInUser = function() {
-			$http({
+		var getLoggedInUser = function() {
+			console.log('setLoggedInUser');
+			// return $http({
+			// 	url: authUsuarioUrl,
+			// 	method: "GET",
+			// }).success(function (data) {
+			// 	console.log('Colocando usuario logado no localStorate');
+			// 	localStorageService.set('loggedUser', data);
+			// 	return true;
+			// }).error(function (data, status, headers, config) {
+			// 	console.log('Erro ao buscar usuario logado!');
+			// 	return false;
+			// });
+
+			return $http({
 				url: authUsuarioUrl,
 				method: "GET",
-			}).success(function (data) {
-				localStorageService.set('loggedUser', data);
-				usuarioLogado = true;
-			}).error(function (data, status, headers, config) {
-				console.log('Erro ao buscar usuario logado!');
 			});
-		}
+
+		};
 
 		var clearCredentials = function() {
 			$rootScope.globals = {};
 			$cookies.remove('globals');
 			$http.defaults.headers.common.Authorization = 'Basic';
-		}
+		};
 
 		var removeLoggedInUser = function() {
 			localStorageService.remove('loggedUser');
-		}
+		};
 
 
-		return {
+		var getRoleState = function() {
+
+			if (!AuthService.isLoggedIn) {
+				console.log('Nenhum usuario logado');
+				return 'publico.login';
+			}
+
+			var usuario = localStorageService.get('loggedUser');
+			if (usuario.permissao === 'ROLE_ALUNO') {
+				return 'aluno.home';
+			} else if (usuario.permissao === 'ROLE_PROFESSOR') {
+				return 'professor.home';
+			}
+
+			alert('Role nao mapeada');
+			return 'publico.login';
+		};
+
+
+
+		var AuthService = {
 
 			login: function (username, password) {
+
+				clearCredentials();
+				removeLoggedInUser();
 
 				var data = 'username=' + username + '&password=' + password;
 				$http({
@@ -55,8 +87,15 @@
 				}).success(function (data, status, headers, config) {
 					console.log(headers);
 					setCredentials(username, password);
-					setLoggedInUser();
-					$state.transitionTo('professor.home', {});
+
+					getLoggedInUser().success(function (data) {
+						localStorageService.set('loggedUser', data);
+						var state = getRoleState();
+						$state.transitionTo(state, {});
+					}).error(function (data, status, headers, config) {
+						console.log('Erro ao buscar usuario logado!');
+						return false;
+					});
 				}).error(function (data, status, headers, config) {
 					alert('error: ' + status);
 				});
@@ -77,11 +116,48 @@
 				return false;
 			},
 
+			canAcess: function(state) {
+
+				console.log('Verificando acesso para:  ' + state);
+
+				//publico
+				if (state.indexOf('publico') !== -1)  {
+					return true;
+				}
+				
+				if (!this.isLoggedIn()) {
+					return false;
+				}
+
+				var usuario = this.getCurrentUser();
+				//professor
+				if (state.indexOf('professor') !== -1) {
+					if (usuario.permissao === 'ROLE_PROFESSOR') {
+						return true;
+					}
+				}
+
+				//aluno
+				if (state.indexOf('aluno') !== -1) {
+					if (usuario.permissao === 'ROLE_ALUNO') {
+						return true;
+					}
+				}
+
+				return false;
+
+			},
+
 			getCurrentUser: function() {
+				console.log('AuthService: getCurrentUser');
+				console.log(localStorageService.get('loggedUser'));
 				return localStorageService.get('loggedUser');
 			}
 
+
 		};
+
+		return AuthService;
 
 
 
