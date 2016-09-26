@@ -2,13 +2,13 @@
 	<li class="done">
 		<span><span class="progress-num">1. </span>Anamnese</span>
 	   </li><!--
-	--><li class="">
+	--><li ng-class="{'done': avaliacaoCtrl.etapa >= 2}">
 	<span><span class="progress-num">2. </span>Perimetria</span>
 	   </li><!--
-	--><li>
+	--><li ng-class="{'done': avaliacaoCtrl.etapa >= 3}">
 	<span><span class="progress-num">3. </span>Dobras</span>
 	   </li><!--
-	--><li>
+	--><li ng-class="{'done': avaliacaoCtrl.etapa >= 4}">
 	<span><span class="progress-num">4. </span>Resultado</span>
 </li>
 </ol>

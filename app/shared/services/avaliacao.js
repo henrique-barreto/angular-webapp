@@ -34,6 +34,14 @@
 					method: 'GET', 
 					url: avaliacaoResourceUrl + '?id=' + id
 				});
+			},
+
+
+			getResultado: function(id) {
+				return $http({
+					method: 'GET', 
+					url: avaliacaoResourceUrl + '/resultado?id=' + id
+				});
 			}
 
 		};

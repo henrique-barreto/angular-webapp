@@ -42,12 +42,7 @@
 
 			var professor = novaAvaliacaoService.getProfessor();
 
-			AvaliacaoService.salvar(avaliacao, this.aluno.id, professor.id)
-			.success(function (data, status, headers, config) {
-				alert('salvou!!');
-			}).error(function (data, status, headers, config) {
-				alert('deu erro: ' + status);
-			});
+			return AvaliacaoService.salvar(avaliacao, this.aluno.id, professor.id);
 
 		}
 
