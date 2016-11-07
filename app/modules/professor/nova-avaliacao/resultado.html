@@ -1,1 +1,50 @@
-<h1>Pronto! Avaliação feita com sucesso!</h1>
+<div class="card card-padding no-print">
+	<div class="page-header">
+		<h1>4. Resultado</h1>
+
+		<p>A avaliação foi cadastrada com sucesso, e já está disponível para visualizações no ambiente do aluno.</p>
+
+		<button onclick="window.print();" class="btn btn-warning">Imprimir <span class="glyphicon glyphicon-print"></span></button>
+		<a href="" class="btn btn-success pull-right">Voltar</a>
+	</div>
+</div>
+
+<!-- row -->
+<div class="row" ng-controller="AvaliacaoResultadoController as resultadoCtrl">
+	<!-- col-md-6 -->
+	<div class="col-md-6">
+		<card-resultado-gordura></card-resultado-gordura>
+	</div>
+	<!-- fim col-md-6 -->
+
+	<div class="col-md-6">
+		<card-resultado-peso></card-resultado-peso>
+	</div>
+</div>
+<!-- fim row -->
+
+<div ng-controller="AvaliacaoEstatisticasController as estatsCtrl">
+	
+	<card-ultimas-avaliacoes></card-ultimas-avaliacoes>
+
+	<!-- row -->
+	<div class="row">
+		<!-- col-md-6 -->
+		<div class="col-md-6">
+			<card-evolucao-gordura></card-evolucao-gordura>
+		</div>
+		<!-- fim col-md-6 -->
+
+		<div class="col-md-6">
+			<card-evolucao-peso></card-evolucao-peso>
+		</div>
+
+	</div>
+	<!-- fim row -->
+
+</div>
+
+
+
+
+

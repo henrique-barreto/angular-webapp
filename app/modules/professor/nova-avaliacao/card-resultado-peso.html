@@ -1,0 +1,41 @@
+<div class="card card-padding">
+
+	<!-- card-header -->
+	<div class="card-header">
+		<h2>Peso (kg)</h2>
+	</div>
+	<!-- fim card-header -->
+
+	<!-- card-body -->
+	<div class="card-body">
+
+		<div class="row">
+			<div class="col-sm-7">
+
+				<!-- grafico-wrapper  -->
+				<div class="grafico-wrapper no-print">
+					<canvas id="grafico-resultado-peso" width="50" height="50"></canvas>
+					<div class="text-donut">
+						<p>{{resultadoCtrl.resultado.cardPeso.peso}}</p>
+					</div>
+				</div>
+				<!-- fim grafico-wrapper -->
+
+
+			</div>
+			<div class="col-sm-5">
+
+				<div class="grafico-info">
+					<p><label>Peso</label><br/>{{resultadoCtrl.resultado.cardPeso.peso}}</p>
+					<p><label>Estado</label><br/>{{resultadoCtrl.resultado.cardPeso.estado}}</p>
+					<p><label>Objetivo</label><br/>{{resultadoCtrl.resultado.cardPeso.objetivo}}</p>
+				</div>	
+
+
+			</div>
+		</div>
+
+
+	</div>
+	<!-- fim card-body -->
+</div>

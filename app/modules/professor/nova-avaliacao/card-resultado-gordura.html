@@ -1,0 +1,40 @@
+<!-- card -->
+<div class="card card-padding">
+
+	<!-- card-header -->
+	<div class="card-header">
+		<h2>Percentual de gordura</h2>
+	</div>
+	<!-- fim card-header -->
+
+	<!-- card-body -->
+	<div class="card-body">
+
+		<div class="row">
+			<div class="col-sm-7">
+
+
+				<!-- grafico-wrapper  -->
+				<div class="grafico-wrapper">
+					<canvas id="grafico-resultado-gordura" width="50" height="50""></canvas>
+				</div>
+				<!-- fim grafico-wrapper -->
+
+			</div>
+			<div class="col-sm-5">
+
+				<div class="grafico-info">
+					<p><label>Percentual de gordura</label><br/>{{resultadoCtrl.resultado.cardGordura.percentualGordura}}</p>
+					<p><label>Gordura</label><br/>{{resultadoCtrl.resultado.cardGordura.gorduraTotal}}kg</p>
+					<p><label>Massa magra</label><br/>{{resultadoCtrl.resultado.cardGordura.massaMagra}}kg</p>
+					<p><label>Objetivo</label><br/>{{resultadoCtrl.resultado.cardGordura.objetivo}}</p>
+				</div>	
+
+
+			</div>
+		</div>
+	</div>
+	<!-- fim card-body -->
+
+</div>
+<!-- fim card -->

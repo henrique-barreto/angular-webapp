@@ -160,9 +160,9 @@ body {
 
 	text-align: center;
 	vertical-align: middle;
-	top: -160px;
+	top: -150px;
 	font-weight: bold;
-	font-size: 48px;
+	font-size: 36px;
 }
 
 
@@ -170,8 +170,6 @@ body {
 
 
 .resultado-avaliacao-lista {
-	height: 80px;
-	overflow: hidden;
 }
 
 .btn-showmore {

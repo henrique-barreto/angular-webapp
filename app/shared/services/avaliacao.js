@@ -3,7 +3,7 @@
 	angular.module('app')
 	.service('AvaliacaoService', function ($http) {
 		
-		var avaliacaoResourceUrl = 'http://localhost:8080/treinoapp/api/v1/avaliacao'
+		var avaliacaoResourceUrl = 'http://localhost:8080/treinoapp/api/v1/avaliacoes'
 
 		return {
 			
@@ -32,7 +32,7 @@
 			buscarPorId: function(id) {
 				return $http({
 					method: 'GET', 
-					url: avaliacaoResourceUrl + '?id=' + id
+					url: avaliacaoResourceUrl + '/' + id
 				});
 			},
 
@@ -40,7 +40,7 @@
 			getResultado: function(id) {
 				return $http({
 					method: 'GET', 
-					url: avaliacaoResourceUrl + '/resultado?id=' + id
+					url: avaliacaoResourceUrl + '/resultado/' + id
 				});
 			}
 

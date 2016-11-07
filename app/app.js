@@ -50,7 +50,7 @@
 				}
 				var canAcess = AuthService.canAcess(state + '');
 				if (!canAcess) {
-					console.log($state);
+					//console.log($state);
 					$state.transitionTo('publico.login', {});
 				}
 			});

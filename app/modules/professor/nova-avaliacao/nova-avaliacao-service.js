@@ -9,6 +9,7 @@
 		this.anamnese = {};
 		this.perimetria = {};
 		this.dobras = {};
+		this.id = -1;
 
 		this.novaAvaliacao = function(aluno){ 
 			novaAvaliacaoService.limparDados();
@@ -42,7 +43,15 @@
 
 			var professor = novaAvaliacaoService.getProfessor();
 
-			return AvaliacaoService.salvar(avaliacao, this.aluno.id, professor.id);
+			AvaliacaoService.salvar(avaliacao, this.aluno.id, professor.id)
+			.success(function (data, status, headers, config) {
+				console.log('Salvou avaliacao...');
+				console.log('Setando id: ' + data.id);
+				novaAvaliacaoService.id = data.id;
+				$state.transitionTo('professor.novaAvaliacao.resultado', {});
+			}).error(function (data, status, headers, config) {
+				alert('Erro ao salvar avaliacao ' + status);
+			});
 
 		}
 
@@ -60,6 +69,9 @@
 			this.perimetria = perimetria;
 		};
 		
+		this.getResultado = function () {
+			return AvaliacaoService.getResultado(this.id);			
+		};
 	});
 
 })();

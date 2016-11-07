@@ -21,18 +21,6 @@
 
 		var getLoggedInUser = function() {
 			console.log('setLoggedInUser');
-			// return $http({
-			// 	url: authUsuarioUrl,
-			// 	method: "GET",
-			// }).success(function (data) {
-			// 	console.log('Colocando usuario logado no localStorate');
-			// 	localStorageService.set('loggedUser', data);
-			// 	return true;
-			// }).error(function (data, status, headers, config) {
-			// 	console.log('Erro ao buscar usuario logado!');
-			// 	return false;
-			// });
-
 			return $http({
 				url: authUsuarioUrl,
 				method: "GET",
@@ -60,8 +48,10 @@
 
 			var usuario = localStorageService.get('loggedUser');
 			if (usuario.permissao === 'ROLE_ALUNO') {
+				console.log('Usuario com role de aluno, sendo redirecionado para: aluno.home');
 				return 'aluno.home';
 			} else if (usuario.permissao === 'ROLE_PROFESSOR') {
+				console.log('Usuario com role de professor, sendo redirecionado para: professor.home');
 				return 'professor.home';
 			}
 
@@ -149,8 +139,8 @@
 			},
 
 			getCurrentUser: function() {
-				console.log('AuthService: getCurrentUser');
-				console.log(localStorageService.get('loggedUser'));
+				//console.log('AuthService: getCurrentUser');
+				//console.log(localStorageService.get('loggedUser'));
 				return localStorageService.get('loggedUser');
 			}
 
