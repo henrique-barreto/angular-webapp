@@ -42,6 +42,14 @@
 					method: 'GET', 
 					url: avaliacaoResourceUrl + '/resultado/' + id
 				});
+			},
+
+
+			getEstatisticas: function(idAluno) {
+				return $http({
+					method: 'GET', 
+					url: avaliacaoResourceUrl + '/estatisticas/' + idAluno
+				});
 			}
 
 		};

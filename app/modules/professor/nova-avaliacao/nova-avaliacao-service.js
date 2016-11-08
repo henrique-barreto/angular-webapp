@@ -1,7 +1,7 @@
 (function() {
 
 	angular.module('app.professor')
-	.service('NovaAvaliacaoService', function ($state, AuthService, AvaliacaoService) {
+	.service('NovaAvaliacaoService', function ($state, AuthService, AvaliacaoService, EstatisticasService) {
 
 		var novaAvaliacaoService = this;
 
@@ -48,6 +48,9 @@
 				console.log('Salvou avaliacao...');
 				console.log('Setando id: ' + data.id);
 				novaAvaliacaoService.id = data.id;
+
+				EstatisticasService.setAluno(novaAvaliacaoService.aluno.id);
+				console.log('Nava avaliacao service: mundando para view resultado');
 				$state.transitionTo('professor.novaAvaliacao.resultado', {});
 			}).error(function (data, status, headers, config) {
 				alert('Erro ao salvar avaliacao ' + status);

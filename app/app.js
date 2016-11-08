@@ -6,7 +6,8 @@
 	angular.module('app', [
 		'ui.router', 
 		'LocalStorageModule',
-		'app.professor', 
+		'app.professor',
+		'app.secretaria',  
 		'app.authentication'])
 	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
 

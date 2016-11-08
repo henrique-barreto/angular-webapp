@@ -53,6 +53,9 @@
 			} else if (usuario.permissao === 'ROLE_PROFESSOR') {
 				console.log('Usuario com role de professor, sendo redirecionado para: professor.home');
 				return 'professor.home';
+			} else if (usuario.permissao === 'ROLE_SECRETARIA') {
+				console.log('Usuario com role de ROLE_SECRETARIA, sendo redirecionado para: secretaria.home');
+				return 'secretaria.home';
 			}
 
 			alert('Role nao mapeada');
@@ -130,6 +133,13 @@
 				//aluno
 				if (state.indexOf('aluno') !== -1) {
 					if (usuario.permissao === 'ROLE_ALUNO') {
+						return true;
+					}
+				}
+
+								//aluno
+				if (state.indexOf('secretaria') !== -1) {
+					if (usuario.permissao === 'ROLE_SECRETARIA') {
 						return true;
 					}
 				}

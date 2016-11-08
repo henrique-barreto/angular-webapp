@@ -1,0 +1,23 @@
+
+<div ng-controller="BuscaAlunoController as buscaCtrl">
+	
+	<div class="card card-padding">
+		<h2>Buscar alunos</h2>
+		<form class="form-inline" ng-submit="buscaCtrl.buscarAluno()">
+			<div class="form-group">
+				<label for="exampleInputName2">Nome</label>
+				<input type="text" class="form-control" id="exampleInputName2" ng-model="buscaCtrl.nome">
+				<button class="btn btn-success" type="submit">Buscar <span class="glyphicon glyphicon-search"></span></button>
+			</div>
+		</form>
+	</div>
+
+	<div ng-show="buscaCtrl.mostrarInfo" class="card card-padding card-alert-danger">
+		A busca por <label>{{buscaCtrl.nome}}</label> retornou {{buscaCtrl.alunos.length}} alunos.
+	</div>
+
+
+	<aluno-resultado ng-repeat="aluno in buscaCtrl.alunos"></aluno-resultado>
+
+</div>
+

@@ -26,25 +26,9 @@
 			<div class="resultado-avaliacao-lista">
 
 				<table class="table table-striped">
-					<tr>
-						<td><label>Data: </label> 21/10/2015</td>
-						<td><label>Professor: </label> Michel Temer</td>
-					</tr>
-					<tr>
-						<td><label>Data: </label> 16/08/2015</td>
-						<td><label>Professor: </label> Michel Temer</td>
-					</tr>
-					<tr>
-						<td><label>Data: </label> 15/07/2015</td>
-						<td><label>Professor: </label> Eduardo Cunha</td>
-					</tr>
-					<tr>
-						<td><label>Data: </label> 21/06/2015</td>
-						<td><label>Professor: </label> Eduardo Cunha</td>
-					</tr>
-					<tr>
-						<td><label>Data: </label> 21/03/2015</td>
-						<td><label>Professor: </label> Eduardo Cunha</td>
+					<tr ng-repeat="avaliacao in estatsCtrl.avaliacoes">
+						<td><label>Data: </label> {{avaliacao.id}} 21/10/2015</td>
+						<td><label>Professor: </label> {{avaliacao.professor.nome}}</td>
 					</tr>
 				</table>
 
