@@ -10,39 +10,7 @@
 	<div class="card-body">
 		<!-- grafico-wrapper  -->
 		<div class="grafico-wrapper">
-			<canvas id="myChart4" width="50" height="50"></canvas>
-			<script>
-				var ctx = document.getElementById("myChart4");
-
-				var data4 = {
-					labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
-					datasets: [
-					{
-						label: "Peso (KG)",
-						fill: false,
-						backgroundColor: "#ff9999",
-						borderColor: "red",
-						pointBorderColor: "red",
-						pointBackgroundColor: "#fff",
-						pointBorderWidth: 4,
-						pointHoverRadius: 5,
-						pointHoverBackgroundColor: "rgba(255,205,86,1)",
-						pointHoverBorderColor: "rgba(255,205,86,1)",
-						pointHoverBorderWidth: 2,
-						data: [90, 88, 86, 84, 86]
-					}
-					]
-				};
-
-				var options4 = {
-				}
-
-				var myPieChart4 = new Chart(ctx,{
-					type: 'line',
-					data: data4,
-					options: options4
-				});
-			</script>
+			<canvas id="grafico-evolucao-peso" width="50" height="50"></canvas>
 		</div>
 		<!-- fim grafico-wrapper -->
 	</div>

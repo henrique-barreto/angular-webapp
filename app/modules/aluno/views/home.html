@@ -1,0 +1,157 @@
+
+				<div class="card card-padding">
+					<div class="card-link-direita">
+						<a href="#">Ver meu treino <span class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+					<h1>Meu treino</h1>
+					<div class="row">
+						<div class="col-md-4">
+							<p><label>Data:</label> 21/10/2016</p>
+							<p><label>Professor:</label> Michel Temer</p>
+						</div>
+						<div class="col-md-4">
+							<p><label>Vencimento: </label> 21/11/2016</p>
+							<p><label>Divisões: </label> ABC</p>
+						</div>
+					</div>
+				</div>
+				<div class="card card-padding">
+					<div class="card-link-direita">
+						<a href="#">Ver avaliação completa <span class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+					<h1>Avaliação física</h1>
+					
+					<div class="row">
+						<div class="col-md-6">
+							<!-- card-header -->
+							<div class="card-header">
+								<h2>Percentual de gordura</h2>
+							</div>
+							<!-- fim card-header -->
+
+							<!-- card-body -->
+							<div class="card-body">
+								
+								<div class="row">
+									<div class="col-sm-7">
+
+
+										<!-- grafico-wrapper  -->
+										<div class="grafico-wrapper">
+											<canvas id="myChart" width="50" height="50"></canvas>
+											<script>
+										// For a pie chart
+										var ctx = document.getElementById("myChart");
+										var data = {
+											labels: ["Gordura", "Massa magra"],
+											datasets: [
+											{
+												data: [30, 70],
+												backgroundColor: [
+												"#dd4b39",
+												"rgb(66, 133, 244)",
+												],
+												hoverBackgroundColor: [
+												"#FF6384",
+												"#36A2EB"
+												]
+											}]
+										};
+										var options = {
+											// --circumference: 10,
+										}
+										var myPieChart = new Chart(ctx,{
+											type: 'pie',
+											data: data,
+											options: options
+										});
+									</script>
+								</div>
+								<!-- fim grafico-wrapper -->
+
+							</div>
+							<div class="col-sm-5">
+
+
+								<div class="grafico-info">
+									<p><label>Percentual de gordura</label><br/>30%</p>
+									<p><label>Gordura</label><br/>35kg</p>
+									<p><label>Massa magra</label><br/>70kg</p>
+									<p><label>Objetivo</label><br/>Você precisa perder 6,4 kg de gordura</p>
+								</div>	
+								
+
+							</div>
+						</div>
+					</div>
+					<!-- fim card-body -->
+				</div>
+				<div class="col-md-6">
+					<!-- card-header -->
+					<div class="card-header">
+						<h2>Peso (kg)</h2>
+						<br/>
+					</div>
+					<!-- fim card-header -->
+
+
+					<!-- card-body -->
+					<div class="card-body">
+
+
+						<div class="row">
+							<div class="col-sm-7">
+
+								<!-- grafico-wrapper  -->
+								<div class="grafico-wrapper no-print">
+									<canvas id="myChart2" width="50" height="50"></canvas>
+									<div class="text-donut">
+										<p>75 kg</p>
+									</div>
+									<script>
+										// For a pie chart
+										var ctx = document.getElementById("myChart2");
+										var data2 = {
+											labels: [
+										        // "",
+										        ],
+										        datasets: [
+										        {
+										        	data: [35, 70],
+										        	backgroundColor: [
+										        	"#dd4b39",
+										        	"rgb(66, 133, 244)",
+										        	]
+										        }]
+										    };
+										    var options2 = {
+										    	cutoutPercentage: 80,
+										    }
+										    var myPieChart2 = new Chart(ctx,{
+										    	type: 'doughnut',
+										    	data: data2,
+										    	options: options2
+										    });
+										</script>
+									</div>
+									<!-- fim grafico-wrapper -->
+
+
+								</div>
+								<div class="col-sm-5">
+
+									<div class="grafico-info">
+										<p><label>Peso</label><br/>75 kg</p>
+										<p><label>Estado</label><br/>Acima do peso</p>
+										<p><label>Objetivo</label><br/>Você precisa perder 6,4 kg</p>
+									</div>	
+									
+
+								</div>
+							</div>
+
+
+						</div>
+						<!-- fim card-body -->
+					</div>
+				</div>

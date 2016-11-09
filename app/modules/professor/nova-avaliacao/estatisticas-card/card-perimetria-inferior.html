@@ -1,0 +1,31 @@
+<!-- card -->				
+<div class="card card-padding">
+
+
+	<div class="medida-wrapper">
+		<label>Glúteo</label>
+		<p>{{estatsCtrl.ultimaAvaliacao.perimetria.gluteo}} cm</p>
+	</div>
+
+	<div class="medida-wrapper">
+		<label>Coxa superior</label>
+		<p>{{estatsCtrl.ultimaAvaliacao.perimetria.coxaSuperior}} cm </p>
+	</div>
+
+	<div class="medida-wrapper">
+		<label>Coxa média</label>
+		<p>{{estatsCtrl.ultimaAvaliacao.perimetria.coxaMedia}} cm</p>
+	</div>
+
+	<div class="medida-wrapper">
+		<label>Coxa inferior</label>
+		<p>{{estatsCtrl.ultimaAvaliacao.perimetria.coxaInferior}} cm</p>
+	</div>
+
+	<!-- grafico-wrapper  -->
+	<div class="grafico-wrapper">
+		<canvas id="chartMedidaInferior" width="50" height="50"></canvas>
+	</div>
+	<!-- fim grafico-wrapper -->
+</div>
+<!-- fim card -->

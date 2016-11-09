@@ -28,7 +28,9 @@
 
 		this.getEstatisticas = function() {
 			console.log('Pegando estatisticas...');
-			return AvaliacaoService.getEstatisticas(this.alunoId);
+			
+			return AvaliacaoService.getEstatisticas(this.alunoId)
+
 		};
 
 

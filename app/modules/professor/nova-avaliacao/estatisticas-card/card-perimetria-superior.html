@@ -1,0 +1,86 @@
+<!-- card -->				
+<div class="card card-padding">
+
+
+	<div class="medida-wrapper">
+		<label>Ombro</label>
+		<p>{{estatsCtrl.ultimaAvaliacao.perimetria.ombro}} cm</p>
+	</div>
+
+	<div class="medida-wrapper">
+		<label>Tórax</label>
+		<p>{{estatsCtrl.ultimaAvaliacao.perimetria.torax}} cm</p>
+	</div>
+
+	<div class="medida-wrapper">
+		<label>Abdominal</label>
+		<p>{{estatsCtrl.ultimaAvaliacao.perimetria.abdominal}} cm</p>
+	</div>
+
+	<!-- grafico-wrapper  -->
+	<div class="grafico-wrapper">
+		<canvas id="chartMedida2" width="50" height="50"></canvas>
+		<script>
+			var ctxMedida2 = document.getElementById("chartMedida2");
+
+			var dataMedida2 = {
+				labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
+				datasets: [
+				{
+					label: "Ombro",
+					fill: false,
+					backgroundColor: "#ff9999",
+					borderColor: "red",
+					pointBorderColor: "red",
+					pointBackgroundColor: "#fff",
+					pointBorderWidth: 4,
+					pointHoverRadius: 5,
+					pointHoverBackgroundColor: "rgba(255,205,86,1)",
+					pointHoverBorderColor: "rgba(255,205,86,1)",
+					pointHoverBorderWidth: 2,
+					data: [36, 37.6, 37.8, 38.1, 40]
+				},
+				{
+					label: "Tórax",
+					fill: false,
+					backgroundColor: "#66ccff",
+					borderColor: "blue",
+					pointBorderColor: "blue",
+					pointBackgroundColor: "#fff",
+					pointBorderWidth: 4,
+					pointHoverRadius: 5,
+					pointHoverBackgroundColor: "rgba(255,205,86,1)",
+					pointHoverBorderColor: "rgba(255,205,86,1)",
+					pointHoverBorderWidth: 2,
+					data: [20, 22.6, 23.8, 24.1, 25]
+				},
+				{
+					label: "Abdominal",
+					fill: false,
+					backgroundColor: "#006600",
+					borderColor: "#006600",
+					pointBorderColor: "#006600",
+					pointBackgroundColor: "#fff",
+					pointBorderWidth: 4,
+					pointHoverRadius: 5,
+					pointHoverBackgroundColor: "rgba(255,205,86,1)",
+					pointHoverBorderColor: "rgba(255,205,86,1)",
+					pointHoverBorderWidth: 2,
+					data: [20, 21, 21.5, 22, 23]
+				}
+				]
+			};
+
+			var optionsMedida2 = {
+			}
+
+			var chartLineMedida2 = new Chart(ctxMedida2,{
+				type: 'line',
+				data: dataMedida2,
+				options: optionsMedida2
+			});
+		</script>
+	</div>
+	<!-- fim grafico-wrapper -->
+</div>
+<!-- fim card -->

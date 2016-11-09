@@ -8,12 +8,13 @@
 		'LocalStorageModule',
 		'app.professor',
 		'app.secretaria',  
+		'app.aluno',  
 		'app.authentication'])
 	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
 
 		$locationProvider.html5Mode(true);
 		
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/login');
 		
 
 		$stateProvider
@@ -23,7 +24,7 @@
 		})
 		.state('publico.inicial', {
 			url: '/',
-			templateUrl: '/app/shared/pagina-inicial/index.html'
+			templateUrl: '/app/modules/authentication/login.html'
 		})
 		.state('publico.login', {
 			url: '/login',

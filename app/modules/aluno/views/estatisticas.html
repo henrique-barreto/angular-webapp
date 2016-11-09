@@ -1,0 +1,710 @@
+<div class="card card-padding no-print">
+	<div class="">
+		<h1>Avaliação Física - Estatísticas</h1>
+
+		<button onclick="window.print();" class="btn btn-warning">Imprimir <span class="glyphicon glyphicon-print"></span></button>
+		<button class="btn btn-default">Histórico</button>
+		<a href="" class="btn btn-default pull-right">Voltar</a>
+	</div>
+</div>
+
+
+<!-- row -->
+<div class="row">
+	<!-- col-md-6 -->
+	<div class="col-md-6">
+
+		<!-- card -->
+		<div class="card card-padding">
+			
+			<!-- card-header -->
+			<div class="card-header">
+				<h2>Percentual de gordura</h2>
+			</div>
+			<!-- fim card-header -->
+
+			<!-- card-body -->
+			<div class="card-body">
+				
+				<div class="row">
+					<div class="col-sm-7">
+
+
+						<!-- grafico-wrapper  -->
+						<div class="grafico-wrapper">
+							<canvas id="myChart" width="50" height="50"></canvas>
+							<script>
+										// For a pie chart
+										var ctx = document.getElementById("myChart");
+										var data = {
+											labels: ["Gordura", "Massa magra"],
+											datasets: [
+											{
+												data: [30, 70],
+												backgroundColor: [
+												"red",
+												"#36A2EB",
+												],
+												hoverBackgroundColor: [
+												"#FF6384",
+												"#36A2EB"
+												]
+											}]
+										};
+										var options = {
+											// --circumference: 10,
+										}
+										var myPieChart = new Chart(ctx,{
+											type: 'pie',
+											data: data,
+											options: options
+										});
+									</script>
+								</div>
+								<!-- fim grafico-wrapper -->
+
+							</div>
+							<div class="col-sm-5">
+
+
+								<div class="grafico-info">
+									<p><label>Percentual de gordura</label><br/>30%</p>
+									<p><label>Gordura</label><br/>35kg</p>
+									<p><label>Massa magra</label><br/>70kg</p>
+									<p><label>Objetivo</label><br/>Você precisa perder 6,4 kg de gordura</p>
+								</div>	
+								
+
+							</div>
+						</div>
+					</div>
+					<!-- fim card-body -->
+
+				</div>
+				<!-- fim card -->
+
+			</div>
+			<!-- fim col-md-6 -->
+
+			<div class="col-md-6">
+				<div class="card card-padding">
+					
+					<!-- card-header -->
+					<div class="card-header">
+						<h2>Peso (kg)</h2>
+					</div>
+					<!-- fim card-header -->
+
+
+					<!-- card-body -->
+					<div class="card-body">
+
+
+						<div class="row">
+							<div class="col-sm-7">
+
+								<!-- grafico-wrapper  -->
+								<div class="grafico-wrapper no-print">
+									<canvas id="myChart2" width="50" height="50"></canvas>
+									<div class="text-donut">
+										<p>75 kg</p>
+									</div>
+									<script>
+										// For a pie chart
+										var ctx = document.getElementById("myChart2");
+										var data2 = {
+											labels: [
+										        // "",
+										        ],
+										        datasets: [
+										        {
+										        	data: [35, 70],
+										        	backgroundColor: [
+										        	"red",
+										        	"#36A2EB",
+										        	]
+										        }]
+										    };
+										    var options2 = {
+										    	cutoutPercentage: 80,
+										    }
+										    var myPieChart2 = new Chart(ctx,{
+										    	type: 'doughnut',
+										    	data: data2,
+										    	options: options2
+										    });
+										</script>
+									</div>
+									<!-- fim grafico-wrapper -->
+
+
+								</div>
+								<div class="col-sm-5">
+
+									<div class="grafico-info">
+										<p><label>Peso</label><br/>75 kg</p>
+										<p><label>Estado</label><br/>Acima do peso</p>
+										<p><label>Objetivo</label><br/>Você precisa perder 6,4 kg</p>
+									</div>	
+									
+
+								</div>
+							</div>
+
+
+						</div>
+						<!-- fim card-body -->
+					</div>
+				</div>
+			</div>
+			<!-- fim row -->
+
+
+			<!-- row -->
+			<div class="row no-print">
+				<!-- col-md-6 -->
+				<div class="col-md-12">
+
+					<!-- card -->
+					<div class="card card-padding">
+
+						<form class="form-horizontal pull-right">
+							<select class="form-control">
+								<option>Todas avaliações</option>
+								<option>Últimas 3 avaliações</option>
+								<option>Últimas 2 avaliações</option>
+								<option>Ultima avaliação</option>
+							</select>
+						</form>
+
+						<!-- card-header -->
+						<div class="card-header">
+							<h2>Comparação - Últimas avaliações</h2>
+						</div>
+						<!-- fim card-header -->
+
+
+						<!-- resultado-avaliacao-lista -->
+						<div class="resultado-avaliacao-lista">
+
+							<table class="table table-striped">
+								<tr>
+									<td><label>Data: </label> 21/10/2015</td>
+									<td><label>Professor: </label> Michel Temer</td>
+								</tr>
+								<tr>
+									<td><label>Data: </label> 16/08/2015</td>
+									<td><label>Professor: </label> Michel Temer</td>
+								</tr>
+								<tr>
+									<td><label>Data: </label> 15/07/2015</td>
+									<td><label>Professor: </label> Eduardo Cunha</td>
+								</tr>
+								<tr>
+									<td><label>Data: </label> 21/06/2015</td>
+									<td><label>Professor: </label> Eduardo Cunha</td>
+								</tr>
+								<tr>
+									<td><label>Data: </label> 21/03/2015</td>
+									<td><label>Professor: </label> Eduardo Cunha</td>
+								</tr>
+							</table>
+
+						</div>
+						<!-- fim resultado-avaliacao-lista -->
+
+						<div class="clearfix"></div>
+
+						<button class="btn-showmore" onclick="">Mostrar mais</button>
+
+
+					</div>
+					<!-- fim card -->
+
+				</div>
+				<!-- fim col-md-12 -->
+
+			</div>
+			<!-- fim row -->
+
+			<!-- row -->
+			<div class="row">
+				<!-- col-md-6 -->
+				<div class="col-md-6">
+
+					<!-- card -->
+					<div class="card card-padding">
+						
+						<!-- card-header -->
+						<div class="card-header">
+							<h2>Percentual de gordura</h2>
+						</div>
+						<!-- fim card-header -->
+
+						<!-- card-body -->
+						<div class="card-body">
+							<!-- grafico-wrapper  -->
+							<div class="grafico-wrapper">
+								<canvas id="myChart5" width="50" height="50"></canvas>
+								<script>
+										// For a pie chart
+										var ctx = document.getElementById("myChart5");
+
+										var data5 = {
+											labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
+											datasets: [
+											{
+												label: "Percentual gordura",
+												fill: false,
+												backgroundColor: "#3399ff",
+												borderColor: "#3399ff",
+												pointBorderColor: "#3399ff",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [31, 30.5, 30, 28, 28.1]
+											}
+											]
+										};
+
+										var options5 = {
+											// --circumference: 10,
+										}
+
+										var myPieChart5 = new Chart(ctx,{
+											type: 'line',
+											data: data5,
+											options: options5
+										});
+									</script>
+								</div>
+								<!-- fim grafico-wrapper -->
+							</div>
+							<!-- fim card-body -->
+
+						</div>
+						<!-- fim card -->
+
+					</div>
+					<!-- fim col-md-6 -->
+
+					<div class="col-md-6">
+						<div class="card card-padding">
+							
+
+							<!-- card-header -->
+							<div class="card-header">
+								<h2>Evolução peso</h2>
+							</div>
+							<!-- fim card-header -->
+
+
+							<!-- card-body -->
+							<div class="card-body">
+								<!-- grafico-wrapper  -->
+								<div class="grafico-wrapper">
+									<canvas id="myChart4" width="50" height="50"></canvas>
+									<script>
+										// For a pie chart
+										var ctx = document.getElementById("myChart4");
+
+										var data4 = {
+											labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
+											datasets: [
+											{
+												label: "Peso (KG)",
+												fill: false,
+												backgroundColor: "#ff9999",
+												borderColor: "red",
+												pointBorderColor: "red",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [90, 88, 86, 84, 86]
+											}
+											]
+										};
+
+										var options4 = {
+											// --circumference: 10,
+										}
+
+										var myPieChart4 = new Chart(ctx,{
+											type: 'line',
+											data: data4,
+											options: options4
+										});
+									</script>
+								</div>
+								<!-- fim grafico-wrapper -->
+							</div>
+							<!-- fim card-body -->
+
+
+						</div>
+					</div>
+				</div>
+				<!-- fim row -->
+
+
+
+				<!-- cards row -->
+				<div class="row">
+
+					<!-- col-md-6 -->
+					<div class="col-md-6">
+
+						<!-- card -->				
+						<div class="card card-padding">
+
+
+							<div class="medida-wrapper">
+								<label>Glúteo</label>
+								<p>120 cm</p>
+							</div>
+
+							<div class="medida-wrapper">
+								<label>Coxa superior</label>
+								<p>Esquerdo 120 cm <span>Direito 123 cm</span></p>
+							</div>
+
+							<div class="medida-wrapper">
+								<label>Coxa média</label>
+								<p>Esquerdo 120 cm <span>Direito 123 cm</span></p>
+							</div>
+
+							<div class="medida-wrapper">
+								<label>Coxa inferior</label>
+								<p>Esquerdo 120 cm <span>Direito 123 cm</span></p>
+							</div>
+
+							<div class="medida-wrapper">
+								<label>Panturrilha</label>
+								<p>Esquerdo 120 cm <span>Direito 123 cm</span></p>
+							</div>
+
+							<!-- grafico-wrapper  -->
+							<div class="grafico-wrapper">
+								<canvas id="chartMedida1" width="50" height="50"></canvas>
+								<script>
+										// For a pie chart
+										var ctx = document.getElementById("chartMedida1");
+
+										var dataMedida1 = {
+											labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
+											datasets: [
+											{
+												label: "Glúteo",
+												fill: false,
+												backgroundColor: "#ff9999",
+												borderColor: "red",
+												pointBorderColor: "red",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [36, 37.6, 37.8, 38.1, 40]
+											},
+											{
+												label: "Coxa superior",
+												fill: false,
+												backgroundColor: "#66ccff",
+												borderColor: "blue",
+												pointBorderColor: "blue",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [20, 22.6, 23.8, 24.1, 25]
+											},
+											{
+												label: "Coxa média",
+												fill: false,
+												backgroundColor: "#ff9900",
+												borderColor: "#ff9900",
+												pointBorderColor: "#ff9900",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [60, 60, 61, 62, 62]
+											},
+											{
+												label: "Coxa inferior",
+												fill: false,
+												backgroundColor: "#006600",
+												borderColor: "#006600",
+												pointBorderColor: "#006600",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [20, 21, 21.5, 22, 23]
+											},
+											{
+												label: "Panturrilha",
+												fill: false,
+												backgroundColor: "#ff00ff",
+												borderColor: "#ff00ff",
+												pointBorderColor: "#ff00ff",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [110, 109, 108, 107, 105]
+											}
+											]
+										};
+
+										var optionsMedida1 = {
+											// --circumference: 10,
+										}
+
+										var chartLineMedida1 = new Chart(ctx,{
+											type: 'line',
+											data: dataMedida1,
+											options: optionsMedida1
+										});
+									</script>
+								</div>
+								<!-- fim grafico-wrapper -->
+							</div>
+							<!-- fim card -->
+
+						</div>
+						<!-- fim col-md-12 -->
+
+						<!-- col-md-6 -->
+						<div class="col-md-6">
+
+							<!-- card -->
+							<div class="card card-padding">
+
+
+								<div class="medidas-avaliacao">
+									<div class="medida-wrapper">
+										<label>Ombro</label>
+										<p>120 cm</p>
+									</div>
+
+									<div class="medida-wrapper">
+										<label>Tórax</label>
+										<p>120 cm</p>
+									</div>
+								</div>
+
+								<div class="medida-wrapper">
+									<label>Cintura</label>
+									<p>120 cm</p>
+								</div>
+
+								<div class="medida-wrapper">
+									<label>Abdominal</label>
+									<p>120 cm</p>
+								</div>
+
+								<!-- grafico-wrapper  -->
+								<div class="grafico-wrapper">
+									<canvas id="chartMedida2" width="50" height="50"></canvas>
+									<script>
+										// For a pie chart
+										var ctxMedida2 = document.getElementById("chartMedida2");
+
+										var dataMedida2 = {
+											labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
+											datasets: [
+											{
+												label: "Ombro",
+												fill: false,
+												backgroundColor: "#ff9999",
+												borderColor: "red",
+												pointBorderColor: "red",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [36, 37.6, 37.8, 38.1, 40]
+											},
+											{
+												label: "Tórax",
+												fill: false,
+												backgroundColor: "#66ccff",
+												borderColor: "blue",
+												pointBorderColor: "blue",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [20, 22.6, 23.8, 24.1, 25]
+											},
+											{
+												label: "Cintura",
+												fill: false,
+												backgroundColor: "#ff9900",
+												borderColor: "#ff9900",
+												pointBorderColor: "#ff9900",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [60, 60, 61, 62, 62]
+											},
+											{
+												label: "Abdominal",
+												fill: false,
+												backgroundColor: "#006600",
+												borderColor: "#006600",
+												pointBorderColor: "#006600",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [20, 21, 21.5, 22, 23]
+											}
+											]
+										};
+
+										var optionsMedida2 = {
+											// --circumference: 10,
+										}
+
+										var chartLineMedida2 = new Chart(ctxMedida2,{
+											type: 'line',
+											data: dataMedida2,
+											options: optionsMedida2
+										});
+									</script>
+								</div>
+								<!-- fim grafico-wrapper -->
+							</div>
+							<!-- fim card -->
+
+						</div>
+						<!-- fim col-md-12 -->
+
+						<!-- col-md-6 -->
+						<div class="col-md-6">
+
+							<!-- card -->
+							<div class="card card-padding">
+
+								<div class="medida-wrapper">
+									<label>Bíceps contraído</label>
+									<p>Esquerdo 120 cm <span>Direito 123 cm</span></p>
+								</div>
+
+								<div class="medida-wrapper">
+									<label>Bíceps frio</label>
+									<p>Esquerdo 120 cm <span>Direito 123 cm</span></p>
+								</div>
+
+								<div class="medida-wrapper">
+									<label>Antebraço</label>
+									<p>Esquerdo 120 cm <span>Direito 123 cm</span></p>
+								</div>
+
+								<!-- grafico-wrapper  -->
+								<div class="grafico-wrapper">
+									<canvas id="chartMedida3" width="50" height="50"></canvas>
+									<script>
+										// For a pie chart
+										var ctxMedida3 = document.getElementById("chartMedida3");
+
+										var dataMedida3 = {
+											labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
+											datasets: [
+											{
+												label: "Bíceps contraído",
+												fill: false,
+												backgroundColor: "#ff9999",
+												borderColor: "red",
+												pointBorderColor: "red",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [36, 37.6, 37.8, 38.1, 40]
+											},
+											{
+												label: "Bíceps",
+												fill: false,
+												backgroundColor: "#66ccff",
+												borderColor: "blue",
+												pointBorderColor: "blue",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [20, 22.6, 23.8, 24.1, 25]
+											},
+											{
+												label: "Antebraço",
+												fill: false,
+												backgroundColor: "#ff9900",
+												borderColor: "#ff9900",
+												pointBorderColor: "#ff9900",
+												pointBackgroundColor: "#fff",
+												pointBorderWidth: 4,
+												pointHoverRadius: 5,
+												pointHoverBackgroundColor: "rgba(255,205,86,1)",
+												pointHoverBorderColor: "rgba(255,205,86,1)",
+												pointHoverBorderWidth: 2,
+												data: [30, 31, 31, 32, 33]
+											}
+											]
+										};
+
+										var optionsMedida3 = {
+											// --circumference: 10,
+										}
+
+										var chartLineMedida3 = new Chart(ctxMedida3,{
+											type: 'line',
+											data: dataMedida3,
+											options: optionsMedida3
+										});
+									</script>
+								</div>
+								<!-- fim grafico-wrapper -->
+							</div>
+							<!-- fim card -->
+
+						</div>
+						<!-- fim col-md-12 -->
+
+
+
+					</div>
+					<!-- fim cards row -->
+
+				</div>
+			</div>
+

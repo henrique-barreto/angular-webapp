@@ -59,4 +59,31 @@
 		};
 	});
 
+
+	angular.module('app.professor')
+	.directive('cardPerimetriaInferior', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'app/modules/professor/nova-avaliacao/estatisticas-card/card-perimetria-inferior.html'
+		};
+	});
+
+
+	angular.module('app.professor')
+	.directive('cardPerimetriaSuperior', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'app/modules/professor/nova-avaliacao/estatisticas-card/card-perimetria-superior.html'
+		};
+	});
+
+	angular.module('app.professor')
+	.directive('cardPerimetriaBracos', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'app/modules/professor/nova-avaliacao/estatisticas-card/card-perimetria-bracos.html'
+		};
+	});
+
+
 })();

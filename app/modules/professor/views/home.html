@@ -1,1 +1,66 @@
-<h1>Home prof!</h1>
+<div class="card card-padding" ng-controller="BuscaAlunoController as buscaCtrl">
+	<h2>Buscar alunos</h2>
+	<form class="form-inline" ng-submit="buscaCtrl.buscarAluno()">
+		<div class="form-group">
+			<label for="exampleInputName2">Nome</label>
+			<input type="text" class="form-control" id="exampleInputName2" ng-model="buscaCtrl.nome">
+			<button class="btn btn-success" type="submit">Buscar <span class="glyphicon glyphicon-search"></span></button>
+		</div>
+	</form>
+</div>
+
+<div class="card card-padding">
+	<h2>Avaliações físicas agendadas</h2>		
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<tr>
+				<th>Aluno</th>
+				<th>Horário</th>
+				<th>Data</th>	
+			</tr>
+			<tr>
+				<td>Henrique Gonçalves Barreto</td>
+				<td>10:00 às 11:00</td>
+				<td>24/01/2016</td>
+			</tr>
+			<tr>
+				<td>Michel Temer</td>
+				<td>15:00 às 16:00</td>
+				<td>26/01/2016</td>
+			</tr>
+			<tr>
+				<td>Henrique Gonçalves Barreto</td>
+				<td>08:00 às 09:00</td>
+				<td>29/01/2016</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="card card-padding">
+	<h2>Solicitações de treino</h2>		
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<tr>
+				<th>Aluno</th>
+				<th>Vencimento treino atual</th>
+				<th>Dias para vencer</th>	
+			</tr>
+			<tr class="danger">
+				<td>Henrique Gonçalves Barreto</td>
+				<td>24/01/2016</td>
+				<td>Vencido</td>
+			</tr>
+			<tr>
+				<td>Michel Temer</td>
+				<td>24/01/2016</td>
+				<td>1 dia</td>
+			</tr>
+			<tr>
+				<td>Henrique Gonçalves Barreto</td>
+				<td>24/01/2016</td>
+				<td>6 dias</td>
+			</tr>
+		</table>
+	</div>
+</div>

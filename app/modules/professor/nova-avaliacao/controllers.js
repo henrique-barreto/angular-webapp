@@ -30,7 +30,7 @@
 
 		this.nextPerimetria = function () {
 
-			this.perimetria = {
+/*			this.perimetria = {
 				'ombro': 123,
 				'torax': 123,
 				'abdominal': 123,
@@ -41,7 +41,7 @@
 				'bicepsContraido': 123,
 				'biceps': 123,
 				'antebraco': 123
-			};
+			};*/
 
 			NovaAvaliacaoService.setPerimetria(this.perimetria);
 			$state.transitionTo('professor.novaAvaliacao.dobras', {});

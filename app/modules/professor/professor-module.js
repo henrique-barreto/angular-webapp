@@ -7,15 +7,15 @@
 		.state('professor', {
 			abstract: true,
 			templateUrl: '/app/shared/view-template/seguro.html'
-			// ,
-			// onEnter: function(){
-			// 	alert('hfghfghfghello');	
-			// }
 			
 		})
 		.state('professor.home', {
 			url: '/professor',
 			templateUrl : "app/modules/professor/views/home.html"
+		})
+		.state('professor.meusDados', {
+			url: '/professor/meus-dados',
+			templateUrl : "app/modules/professor/views/meus-dados.html"
 		})
 		.state('professor.buscar', {
 			url: '/professor/buscar-aluno',

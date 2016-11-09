@@ -11,39 +11,7 @@
 	<div class="card-body">
 		<!-- grafico-wrapper  -->
 		<div class="grafico-wrapper">
-			<canvas id="myChart5" width="50" height="50"></canvas>
-			<script>
-				var ctx = document.getElementById("myChart5");
-
-				var data5 = {
-					labels: ["10/02/2016", "14/03/2016", "16/03/2016", "16/04/2016", "28/07/2016"],
-					datasets: [
-					{
-						label: "Percentual gordura",
-						fill: false,
-						backgroundColor: "#3399ff",
-						borderColor: "#3399ff",
-						pointBorderColor: "#3399ff",
-						pointBackgroundColor: "#fff",
-						pointBorderWidth: 4,
-						pointHoverRadius: 5,
-						pointHoverBackgroundColor: "rgba(255,205,86,1)",
-						pointHoverBorderColor: "rgba(255,205,86,1)",
-						pointHoverBorderWidth: 2,
-						data: [31, 30.5, 30, 28, 28.1]
-					}
-					]
-				};
-
-				var options5 = {
-				}
-
-				var myPieChart5 = new Chart(ctx,{
-					type: 'line',
-					data: data5,
-					options: options5
-				});
-			</script>
+			<canvas id="evolucao-gordura-grafico" width="50" height="50"></canvas>
 		</div>
 		<!-- fim grafico-wrapper -->
 	</div>

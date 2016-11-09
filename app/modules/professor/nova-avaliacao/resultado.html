@@ -23,7 +23,7 @@
 </div>
 <!-- fim row -->
 
-<div ng-controller="AvaliacaoEstatisticasController as estatsCtrl" ng-init="estatsCtrl.init()">
+<div ng-controller="AvaliacaoEstatisticasController as estatsCtrl" ng-init="estatsCtrl.pegarEstats()">
 	
 	<card-ultimas-avaliacoes></card-ultimas-avaliacoes>
 
@@ -41,6 +41,30 @@
 
 	</div>
 	<!-- fim row -->
+
+	<!-- cards row -->
+	<div class="row">
+
+		<!-- col-md-6 -->
+		<div class="col-md-6">
+			<card-perimetria-inferior></card-perimetria-inferior>
+		</div>
+		<!-- fim col-md-12 -->
+
+		<!-- col-md-6 -->
+		<div class="col-md-6">
+			<card-perimetria-superior></card-perimetria-superior>
+		</div>
+		<!-- fim col-md-12 -->
+
+		<!-- col-md-6 -->
+		<div class="col-md-6">
+			<card-perimetria-bracos></card-perimetria-bracos>
+		</div>
+		<!-- fim col-md-12 -->
+
+	</div>
+	<!-- fim cards row -->
 
 </div>
 

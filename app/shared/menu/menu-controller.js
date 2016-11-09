@@ -51,7 +51,7 @@
 		    "nome": "Configuraçãoes",
 		    "items": [
 		      {
-		        "state": "professor.treinos",
+		        "state": "professor.meusDados",
 		        "nome": "Meus dados"
 		      },
 		      {
@@ -111,11 +111,11 @@
 		        "nome": "Estatísticas"
 		      },
 		      {
-		        "state": "aluno.avaliacaoHistorico",
+		        "state": "aluno.historico",
 		        "nome": "Histórico"
 		      },
 		      {
-		        "state": "aluno.avaliacaoAgendamento",
+		        "state": "aluno.agendamento",
 		        "nome": "Agendamento"
 		      }
 		    ]
