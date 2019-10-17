@@ -1,0 +1,18 @@
+entity Perfil {
+	nome String
+    ativo Boolean
+}
+
+entity Deposito {
+	nome String
+    ativo Boolean
+}
+
+entity Pessoa {
+	nome String
+    data LocalDate
+}
+
+
+paginate Deposito with pagination
+paginate Perfil with pagination
